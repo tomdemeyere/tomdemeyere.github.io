@@ -18,7 +18,7 @@ social: false  # includes social icons at the bottom of the page
 
 Hi! I'm a PhD student currently working at the [University of Southampton](https://www.southampton.ac.uk/) under the supervision of [Prof. Chris Skylaris](https://www.southampton.ac.uk/people/5x2r2f/professor-chris-skylaris). My research interests include computational chemistry, electrochemistry, and catalysis.
 
-I hold a Bachelor of Physical-Chemistry from the [University of Lille](https://www.univ-lille.fr) which I completed in 2018. In 2020 I graduated from the [European Master in Advanced Spectroscopy in Chemistry](https://master-asc.eu) at the [Jagiellonian University](https://en.uj.edu.pl/en_GB/start) in Krakow via the Erasmus Mundus program.
+I hold a Bachelor of Physical-Chemistry from the [University of Lille](https://www.univ-lille.fr) which I completed in 2018. In 2020 I graduated from the [European Master in Advanced Spectroscopy in Chemistry](https://master-asc.eu) at the [Jagiellonian University](https://en.uj.edu.pl/en_GB/start) in Kraków via the Erasmus Mundus program.
 
 Mostly, I love problem-solving and learning new things. I'm always looking for new opportunities and challenges. I used to spend quite a bit of time on [HackerRank](https://www.hackerrank.com/profile/tom_dmre) although time is difficult to find these days. I also enjoy working on open-source projects and contributing to the scientific community. More recently I contributed to implement complex workflows for computational chemistry in [Quacc](https://github.com/Quantum-Accelerators/quacc)
 
