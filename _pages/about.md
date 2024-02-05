@@ -22,7 +22,7 @@ I hold a Bachelor of Physical-Chemistry from the [University of Lille](https://w
 
 Mostly, I love problem-solving and learning new things. I'm always looking for new opportunities and challenges. I used to spend quite a bit of time on [HackerRank](https://www.hackerrank.com/profile/tom_dmre) although time is difficult to find these days. I also enjoy working on open-source projects and contributing to the scientific community. More recently I contributed to implement complex workflows for computational chemistry in [Quacc](https://github.com/Quantum-Accelerators/quacc)
 
-The picture on the right is my girlfriend Emilie and me! We are both passionate about science and we are both doing a PhD in the UK at the University of Southampton. She is working on the development of resistive memories using Polyoxometalates and hopefully should get a blog as well soon!
+This is picture of my girlfriend Emilie and me! We are both passionate about science and we are both doing a PhD in the UK at the University of Southampton. She is working on the development of resistive memories using Polyoxometalates and hopefully should get a blog as well soon!
 
 [comment]: Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.>
 

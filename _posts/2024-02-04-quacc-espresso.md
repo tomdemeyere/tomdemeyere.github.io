@@ -16,6 +16,7 @@ Unfortunately, at the time there was no implementation for Quantum Espresso, I d
 Before running everything, Quacc has a configuration file that you must setup correctly to run Espresso calculations. Two important things to set are the path to the Espresso binary and the pseudopotential directory. This configuration file is by default located at `~/.quacc.yaml`. Let's use the CLI to set it up:
 
 ```bash
+# Setting ESPRESSO_BIN_DIR is not needed if pw.x is in your PATH
 quacc set ESPRESSO_BIN_DIR /path/to/espresso/bin
 quacc set ESPRESSO_PSEUDO /path/to/espresso/pseudopotentials
 ```
@@ -47,7 +48,7 @@ Results are stored in the variable `results` which is a dictionary.
 
 There are other keys in the dictionary, but these are the most important ones. Printing the dictionary will give you a better idea of what's inside.
 
-For files, by default, Quacc creates folders in the current working directory that you will quickly notice. Calculations are run in temporary folders and at the end files are moved and gzipped to a permanent folder. If this behaviour seems strange, it makes more sense when you consider the use of workflow engines. Settings are available to change the default behaviour; if you want more information about directory management, the Quacc documentation has a nice [page](https://quantum-accelerators.github.io/quacc/user/settings/file_management.html) about it.
+For files, you will notice Quacc creating folders in the current working directory. Calculations are run in temporary folders and at the end files are moved and gzipped to a permanent folder. If this behaviour seems strange, it makes more sense when you consider the use of workflow engines. Settings are available to change the default behaviour; if you want more information about directory management, the Quacc documentation has a nice [page](https://quantum-accelerators.github.io/quacc/user/settings/file_management.html) about it.
 
 ---
 ##### **How do I change the Espresso keywords?**
@@ -95,7 +96,7 @@ relax_results = ase_relax_job(atoms)
 phonon_results = phonon_job(relax_results["dir_name"])
 ```
 
-The above code will run a relaxation calculation using ASE optimizers and then run a phonon calculation using ph.x. Similarly, you can change the parameters of the phonon calculations by passing input_data and other parameters to the phonon_job function, everything should be described in the documentation. The Espresso calculator in Quacc takes care of activating restart keywords such as `startingpot` and `startingwfc` during the optimization phase to avoid starting from scratch at each step. Of course, if you want to use the Espresso internal optimizer, you can use the `quacc.recipes.espresso.core.relax_job`{:.python} function.
+The above code will run a relaxation calculation using ASE optimizers and then run a phonon calculation using ph.x. Similarly, you can change the parameters of the phonon calculations by passing `input_data` and other parameters to the phonon_job function, everything should be described in the documentation. The Espresso calculator in Quacc takes care of activating restart keywords such as `startingpot` and `startingwfc` during the optimization phase to avoid starting from scratch at each step. Of course, if you want to use the Espresso internal optimizer, you can use the `quacc.recipes.espresso.core.relax_job`{:.python} function.
 
 ---
 
