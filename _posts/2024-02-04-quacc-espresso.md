@@ -109,3 +109,20 @@ That's it for this post! This is probably the first part of a series of posts ab
 4. How to modify an ASE dynamics object to perform additional actions, such as projwfc.x or pp.x jobs at a predefined interval in an optimization or MD run.
 
 In the meantime, if you are interested you can learn more by having a look at the [Quacc documentation](https://quantum-accelerators.github.io/quacc/). Or wait until I write a post about it in the coming days!
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="tomdemeyere/tomdemeyere.github.io"
+        data-repo-id="R_kgDOK8-7Kg"
+        data-category="Comments"
+        data-category-id="DIC_kwDOK8-7Ks4Cc9vt"
+        data-mapping="title"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
