@@ -46,6 +46,7 @@
       description:
       - Developped a modern calculator for the ONETEP linear-scaling DFT code.
       - Greatly extended the capabilities of the Quantum Espresso calculator.
+      - Contributed bug fixes and performance improvements to the core ASE library.
     - title: The Quantum Accelerator (QuAcc)
       year: 2023-now
       description:
