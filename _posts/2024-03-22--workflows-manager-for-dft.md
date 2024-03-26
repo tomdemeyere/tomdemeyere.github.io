@@ -8,13 +8,13 @@ featured: true
 related_posts: false
 ---
 
-A few weeks ago I posted my first blog post where I explain how to use the new Quantum Accelerator (Quacc) package to run DFT calculations with Quantum Espresso. In this blog post, I will show you how to use Quacc in combination with the Parsl workflow engine to create concurrent workflows for DFT calculations. This will allow you to run multiple calculations concurrently on your local machine or on a high-performance computing cluster.
+A few weeks ago I posted my [first blog post](https://tomdemeyere.github.io/blog/2024/quacc-espresso/) where I explain how to use the new Quantum Accelerator (Quacc) package to run DFT calculations with Quantum Espresso. In this blog post, I will show you how to use Quacc in combination with the Parsl workflow engine to create concurrent workflows for DFT calculations. This will allow you to run multiple calculations concurrently on your local machine or on a high-performance computing cluster.
 
 ### Quacc & Parsl tutorial
 
 If you never ran a Quacc calculation before, I recommend you to either read the [Quacc documentation](https://quantum-accelerators.github.io/quacc/) or read my previous blog post. In this blog post, I will assume you have Quacc installed and that you have set up the configuration file correctly.
 
-Before we start, you will need to install Parsl:
+Before we start, you will need to install [Parsl](https://parsl-project.org):
 
 ```bash
 pip install parsl
@@ -50,14 +50,8 @@ def grid_phonon_dos_subflow(atoms_list):
             atoms,
             job_params=grid_phonon_params,
         )
-        q2r_results = q2r_job(
-            grid_phonon_results["dir_name"],
-            **q2r_params
-        )
-        matdyn_results = matdyn_job(
-            q2r_results["dir_name"],
-            **matdyn_params
-        )
+        q2r_results = q2r_job(grid_phonon_results["dir_name"], **q2r_params)
+        matdyn_results = matdyn_job(q2r_results["dir_name"], **matdyn_params)
         results.append(matdyn_results)
 
     return results
@@ -77,32 +71,29 @@ from parsl.executors import HighThroughputExecutor
 from parsl.launchers import SimpleLauncher
 from parsl.providers import SlurmProvider
 
-
 CONFIG = Config(
     executors=[
         HighThroughputExecutor(
             label="short-large",
-            max_workers=32, # max number of @job to run concurently.
-            cores_per_worker=1/32, # number of cores per worker, < 1 to oversubscribe.
+            max_workers=32,  # max number of @job to run concurently.
+            cores_per_worker=1.0e-6,  # number of cores per worker, < 1 to oversubscribe.
             provider=SlurmProvider(
-                account="e89-soto", # your account code.
-                qos="short", # which quality of service.
-                worker_init=worker_init, # bash lines that will run before each @job
+                account="e89-soto",  # your account code.
+                qos="short",  # which quality of service.
+                worker_init=worker_init,  # bash lines that will run before each @job
                 walltime="00:20:00",
-                nodes_per_block=32, # nodes for each slurm job (block)
-                cores_per_node=1, # How many threads to use per parsl worker.
+                nodes_per_block=32,  # nodes for each slurm job (block)
+                cores_per_node=1,  # How many threads to use per parsl worker.
                 partition="standard",
-                init_blocks=0, # To be kept to 0, especially if you are using different executors.
-                max_blocks=1, # Max number of slurm_jobs.
-                launcher=SimpleLauncher(), # Control where Parsl will live,
+                init_blocks=0,  # To be kept to 0, especially if you are using different executors.
+                max_blocks=1,  # Max number of slurm_jobs.
+                launcher=SimpleLauncher(),  # Control where Parsl will live,
             ),
         ),
     ]
 )
 
-# We load parsl using this config.
 parsl.load(CONFIG)
-
 ```
 
 The terminology is a bit different from what you might be used to, here is a quick summary:
@@ -264,7 +255,7 @@ When using Parsl things are a little bit different, the output will mainly be lo
 
 ##### **I want to use a different interface then slurm/srun, how?**
 
-Parsl is very flexible and can be used with a lot of different interfaces. The `SlurmProvider` is only one of them. However, running MPI apps is a tricky business, as of now (25th March 2024), Quacc does not support command that do not automatically allocate ressources for a job such as mpirun/mpiexec or other exotic executables. The underlying technical reason is that Quacc do not communicate to Parsl the size of each job. This is currently [being implemented](https://github.com/Quantum-Accelerators/quacc/issues/1886).
+Parsl is very flexible and can be used with a [lot of different interfaces](https://parsl.readthedocs.io/en/stable/userguide/configuring.html). The `SlurmProvider` is only one of them. However, running MPI apps is a tricky business, as of now (25th March 2024), Quacc does not support command that do not automatically allocate ressources for a job such as mpirun/mpiexec or other exotic executables. The underlying technical reason is that Quacc do not communicate to Parsl the size of each job. This is currently [being implemented](https://github.com/Quantum-Accelerators/quacc/issues/1886).
 
 ---
 
