@@ -5,6 +5,7 @@ date: 2024-02-04 21:00:00
 description: I recently discovered Quacc and I implemented an interface for the Quantum Espresso code. Let's try it!
 tags: Quacc DFT Espresso ASE
 featured: true
+related_posts: false
 ---
 
 Not long ago, I was looking at the [Atomic Simulation Environment](https://wiki.fysik.dtu.dk/ase/) (ASE) [ecosystem page](https://wiki.fysik.dtu.dk/ase/ecosystem.html), when I noticed a new contender: The Quantum Accelerator (Quacc) from the [Rosen group](https://rosen.cbe.princeton.edu) at Princeton. It is a new Python package that aims to connect computational chemistry codes to various workflow engines. I quickly got hooked and tried to use it for my work. The package runs around the Atomic Simulation Environment (ASE) and provides recipes and presets to run calculations with ease. You don't necessarily have to use a workflow engine to use it, this tutorial will not use any. [The installation](https://quantum-accelerators.github.io/quacc/install/install.html#installing-quacc) is pretty standard, the only important thing is that you will need the latest ASE version from git before installing it.

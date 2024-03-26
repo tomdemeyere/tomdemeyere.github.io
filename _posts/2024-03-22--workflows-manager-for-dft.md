@@ -8,7 +8,7 @@ featured: true
 related_posts: false
 ---
 
-A few weeks ago I posted my [first blog post](https://tomdemeyere.github.io/blog/2024/quacc-espresso/) where I explained how to use the new Quantum Accelerator (Quacc) package to run DFT calculations with Quantum Espresso. In this blog post, I will show you how to use Quacc in combination with the Parsl workflow engine to create concurrent workflows for DFT calculations. This will allow you to run multiple calculations concurrently on your local machine or on a high-performance computing cluster.
+A few weeks ago I posted my [first blog post](https://tomdemeyere.github.io/blog/2024/quacc-espresso/) where I explained how to use the new [Quantum Accelerator (Quacc)](https://github.com/Quantum-Accelerators/quacc/) package to run DFT calculations with Quantum Espresso. Quacc allows you to link your favorite DFT code to a workflow manager. In this blog post, I will show you how to use Quacc in combination with the Parsl workflow engine to create concurrent workflows for DFT calculations. This will allow you to run multiple calculations concurrently on your local machine or on a high-performance computing cluster.
 
 ### Quacc & Parsl tutorial
 
@@ -26,7 +26,7 @@ Now that you have Parsl installed, you can configure Quacc to use this workflow 
 quacc set WORKFLOW_ENGINE parsl
 ```
 
-For the purpose of this tutorial, I will assume a similar setup than in my previous blog-post: 
+For the purpose of this tutorial we will use the open-source plane-wave [Quantum Espresso](https://www.quantum-espresso.org) code, I will assume a similar setup than in my [previous blog-post](https://tomdemeyere.github.io/blog/2024/quacc-espresso/): 
 
 - `ESPRESSO_PSEUDO` is set to a folder that contains the full [SSSP 1.3.0 efficiency](https://www.materialscloud.org/discover/sssp/table/efficiency) pseudopotential library.
 - `ESPRESSO_BIN_DIR` is set to the path of the Quantum Espresso binaries.
