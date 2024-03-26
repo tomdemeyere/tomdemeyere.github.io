@@ -224,7 +224,7 @@ At this stage, running the Python script doesn't produce any output. This is bec
 results = future.result()
 ```
 
-If you have important disparities between the size of your jobs, Parsl allows you to define multiple executors. To do this, you just need to add a new executor to the `CONFIG` object. You simply need to add one more executor to the list. I will not show it here, but the code is available on my [GitHub](). Using Quacc each job can be linked to a single executor to make sure to run your jobs using the resources you want.
+If you have important disparities between the size of your jobs, Parsl allows you to define multiple executors. To do this, you just need to add a new executor to the `CONFIG` object. You simply need to add one more executor to the list. I will not show it here, but the code is available on my [GitHub](https://github.com/tomdemeyere/tomdemeyere.github.io/blob/master/code_snippets/blog-post-2.py). Using Quacc each job can be linked to a single executor to make sure to run your jobs using the resources you want.
 
 ``` python
 q2r_job_custom = redecorate(q2r_job, job(executors=["q2r"]))
@@ -235,12 +235,12 @@ matdyn_job_custom = redecorate(matdyn_job, job(executors=["matdyn"]))
 
 ##### **What will happen exactly?**
 
-Parsl will construct the workflow internally and be able to manage the intresic dependencies between the jobs. Two jobs that do not depends on each other can possibly run at the same time. To make things clearer I made the diagram below that summarize what is happening.
+Parsl will construct the workflow internally and be able to manage the intrinsic dependencies between the jobs. Two jobs that do not depend on each other can possibly run at the same time. To make things clearer I made the diagram below that summarizes what is happening.
 
 
 {% include figure.html path="assets/img/grid_phonon_flow.png" class="img-fluid rounded" %}
 <div class="caption">
-    Schematic of the workflow, all `Atoms` object will run concurently, similarly all identical colors within each subtask can run concurently as well. This makes the problem embarrassingly parallel.
+    Schematic of the workflow, all `Atoms` objects will run concurrently, similarly all identical colors within each subtask can run concurrently as well. This makes the problem embarrassingly parallel.
 </div>
 
 Depending on the number of workers you have set, you will see as many concurrent calculations, other tasks will be queued and run as soon as a worker is available.
@@ -253,12 +253,12 @@ When using Parsl things are a little bit different, the output will mainly be lo
 
 ---
 
-##### **I want to use a different interface then slurm/srun, how?**
+##### **I want to use a different interface than Slurm/srun, how?**
 
-Parsl is very flexible and can be used with a [lot of different interfaces](https://parsl.readthedocs.io/en/stable/userguide/configuring.html). The `SlurmProvider` is only one of them. However, running MPI apps is a tricky business, as of now (25th March 2024), Quacc does not support command that do not automatically allocate ressources for a job such as mpirun/mpiexec or other exotic executables. The underlying technical reason is that Quacc do not communicate to Parsl the size of each job. This is currently [being implemented](https://github.com/Quantum-Accelerators/quacc/issues/1886).
+Parsl is very flexible and can be used with a [lot of different interfaces](https://parsl.readthedocs.io/en/stable/userguide/configuring.html). The `SlurmProvider` is only one of them. However, running MPI apps is a tricky business, as of now (25th March 2024), Quacc does not support commands that do not automatically allocate resources for a job such as mpirun/mpiexec or other exotic executables. The underlying technical reason is that Quacc does not communicate to Parsl the size of each job. This is currently [being implemented](https://github.com/Quantum-Accelerators/quacc/issues/1886).
 
 ---
 
 ##### **What if one job fails?**
 
-Parsl is able to handle this, if a job fails, every other jobs that do not have the failed job as a dependency will run. This is a very powerful feature that allows to run high-throughput workflows without having to worry about too much about the stability of the system. Be aware that the `future.result()` will still raise an exception if a job fails.
+Parsl is able to handle this, if a job fails, every other jobs that do not have the failed job as a dependency will run. This is a very powerful feature that allows to run high-throughput workflows without having to worry too much about the stability of the system. Be aware that the `future.result()` will still raise an exception if a job fails.
