@@ -139,4 +139,4 @@ atoms_list = [
 
 future = grid_phonon_dos_subflow(atoms_list)
 
-future.result()
+results = future.result()

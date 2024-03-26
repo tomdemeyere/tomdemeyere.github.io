@@ -108,7 +108,7 @@ The terminology is a bit different from what you might be used to, here is a qui
 
 These parallelisation options are not to be seen as the one which will affect your individual DFT calculations but more as a **total** parallelisation that will dictate how much ressource this `executor` can use. Your DFT calculations are then dispatched inside this executor, their parallelisation will be specified later.
 
-`worker_init` should have anything you need to run your software, the machine I use do not have access to the home system from the compute nodes, so I need to to load a 'scratch' bashrc that contains the conda init. This is done by adding the following lines:
+`worker_init` should have everything you need to run espresso, the machine I use do not have access to the home system from the compute nodes, so I need to to load a 'scratch' bashrc that contains the conda init. This is done by adding the following lines:
 
 ``` python
 worker_init = """
