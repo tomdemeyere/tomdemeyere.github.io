@@ -12,6 +12,8 @@ A few weeks ago I posted my [first blog post](https://tomdemeyere.github.io/blog
 
 ### Quacc & Parsl tutorial
 
+{% include figure.html path="assets/img/bitmap.png" class="img-fluid rounded" %}
+
 If you never run a Quacc calculation before, I recommend you to either read the [Quacc documentation](https://quantum-accelerators.github.io/quacc/) or read my [previous blog post](https://tomdemeyere.github.io/blog/2024/quacc-espresso/). For now, I will assume you have Quacc installed and that you have set up the configuration file correctly.
 
 Before we start, you will need to install [Parsl](https://parsl-project.org):
