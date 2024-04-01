@@ -6,7 +6,6 @@ description: Quacc & Parsl, concurrent workflows for DFT calculations.
 tags: Quacc DFT Espresso Parsl
 featured: true
 related_posts: false
-thumbnail: assets/img/bitmap.png
 ---
 
 A few weeks ago I posted my [first blog post](https://tomdemeyere.github.io/blog/2024/quacc-espresso/) where I explained how to use the [Quantum Accelerator (Quacc)](https://github.com/Quantum-Accelerators/quacc/) package to run DFT calculations with Quantum Espresso. Quacc allows you to link your favorite DFT code to a workflow manager, in this blog post I will show you how to run Quantum Espresso calculations using Quacc and the Parsl workflow engine to create comp-chem workflows. The main point being to run multiple calculations concurrently on your local machine or on a high-performance computing cluster.
