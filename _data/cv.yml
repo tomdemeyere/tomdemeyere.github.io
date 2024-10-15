@@ -3,51 +3,52 @@
   contents:
     - name: Full Name
       value: Tom Demeyere
-    - name: Date of Birth
-      value: 15th July 1995
     - name: Languages
-      value: French, English
+      value: French (native), English (fluent)
 
 - title: Education
   type: time_table
   contents:
-    - title: Industrial PhD
+    - title: Industrial PhD (Coupling of Modern Computational Techniques to Study the Oxygen Reduction Reaction)
       institution: University of Southampton, Southampton, UK
-      year: 2020 - Now
+      year: 2020 - 2024
       description:
-        - New computational techniques to study realistic
-          catalysis for the Oxygen Reduction Reaction.
-        - Applying machine learned and classical forcefields in combination with quantum mechanical methods.
+        - Computational chemistry and materials science PhD focusing on studying the Oxygen Reduction Reaction on platinum catalysts.
         - Collaborating with Johnson Matthey, a global leader in sustainable technologies.
     - title: MSc
-      institution: University of Lille, Lille, France / Jagiellonian University, Kraków, Poland
-      year: 2020
+      institution: Lille University, Lille, France / Jagiellonian University, Kraków, Poland
+      year: 2018 - 2020
       description:
-        - First year, Molecular Dynamics and Chemical Reactivity
-        - Second year, Advanced Spectroscopy in Chemistry Master 
-          via the Erasmus Mundus program at Jagiellonian University, Kraków, Poland.
+        - First year, "Molecular Dynamics and Chemical Reactivity" at Lille University, France.
+        - Second year, "Advanced Spectroscopy in Chemistry" International Master's program
+          via the Erasmus Mundus program at Jagiellonian University, Poland.
         - title: Master's thesis
           contents:
-          - "Development of a bassin-hopping algorithm to study the adsorption of molecules on semi-conductors"
+            - "Development of a Basin-Hopping Algorithm to Study the Adsorption of Molecules on Semi-Conductors"
     - title: BSc
-      institution: University of Lille, Lille, France
-      year: 2018
+      institution: Lille University, Lille, France
+      year: 2014 - 2018
       description:
         - Bachelor's degree in Physics and Chemistry
         - title: Bachelor's project
           contents:
-          - "Using flurorescence spectroscopy to study degradation of pollens in the atmosphere."
+            - "Using Fluorescence Spectroscopy to Study Degradation of Pollens in the Atmosphere"
 
-- title: Open Source Contributions
+- title: Skills
+  type: list
+  contents:
+    - "<b>Programming:</b> Proficient in Python, Julia, Bash. Familiar with Java, C, and Fortran."
+    - "<b>Software:</b> VASP, Quantum Espresso, ONETEP, LAMMPS, ASE, QuAcc, Parsl, Dask, Covalent, Git, Inkscape, Illustrator, Visual Studio Code."
+    - "<b>Techniques:</b> (Linear-Scaling) DFT, MD, MC, Machine Learning, Data Analysis, Workflow Engines."
+
+- title: Side Projects
   type: time_table
   contents:
-    - title: Atomic Simulation Environment (ASE)
-      year: 2022-now
+    - title: (Contributor) Atomic Simulation Environment (ASE)
+      year: 2022 - now
       description:
-      - Developped a modern calculator for the ONETEP linear-scaling DFT code.
-      - Greatly extended the capabilities of the Quantum Espresso calculator.
-      - Contributed bug fixes and performance improvements to the core ASE library.
-    - title: The Quantum Accelerator (QuAcc)
-      year: 2023-now
+        - Implemented MD-specific codes (Bussi thermostat), developed calculators for DFT codes, and contributed to the core library.
+    - title: (Contributor) Quantum Accelerator (QuAcc)
+      year: 2023 - now
       description:
-      - Implemented Quantum Espresso complex workflows in a user-friendly interface.
+        - Worked on implementing concurrent workflows using workflow engines (Dask, Fireworks, Parsl, ...) and contributed to the core library.
