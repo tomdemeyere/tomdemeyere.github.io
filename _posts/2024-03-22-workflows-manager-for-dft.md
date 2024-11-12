@@ -215,7 +215,7 @@ atoms_list = [
 future = grid_phonon_dos_subflow(atoms_list)
 ```
 
-At this stage, running the Python script doesn't produce any output. This is because Parsl is now handling the function call, and it is only generating the [Directed Acyclic Graph (DAG)]((https://en.wikipedia.org/wiki/Directed\_acyclic\_graph)), which is an internal representation of the workflow. The returned object is a future object. To actually execute the workflow, the future object needs to be resolved by calling the `Future.result()` method.
+At this stage, running the Python script doesn't produce any output. This is because Parsl is now handling the function call, and it is only generating the [Directed Acyclic Graph (DAG)](https://en.wikipedia.org/wiki/Directed\_acyclic\_graph), which is an internal representation of the workflow. The returned object is a future object. To actually execute the workflow, the future object needs to be resolved by calling the `Future.result()` method.
 
 ``` python
 results = future.result()
