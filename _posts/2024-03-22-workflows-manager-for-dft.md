@@ -12,7 +12,7 @@ A few weeks ago I posted my [first blog post](https://tomdemeyere.github.io/blog
 
 ### Quacc & Parsl tutorial
 
-{% include figure.html path="assets/img/bitmap.png" class="img-fluid rounded" %}
+{% include figure.liquid loading="eager" path="assets/img/bitmap.png" class="img-fluid rounded" %}
 
 If you never run a Quacc calculation before, I recommend you to either read the [Quacc documentation](https://quantum-accelerators.github.io/quacc/) or read my [previous blog post](https://tomdemeyere.github.io/blog/2024/quacc-espresso/). For now, I will assume you have Quacc installed and that you have set up the configuration file correctly.
 
@@ -235,7 +235,7 @@ matdyn_job_custom = redecorate(matdyn_job, job(executors=["matdyn"]))
 Parsl will construct the workflow internally and be able to manage the intrinsic dependencies between the jobs. As a consequence, two jobs that do not depend on each other can possibly run at the same time. To make things clearer I made the diagram below that summarizes what is happening.
 
 
-{% include figure.html path="assets/img/grid_phonon_flow.png" class="img-fluid rounded" %}
+{% include figure.liquid loading="eager" path="assets/img/grid_phonon_flow.png" class="img-fluid rounded" %}
 <div class="caption">
     Schematic of the workflow, all `Atoms` objects will run concurrently, similarly all identical colors within each subtask can run concurrently as well. This makes the problem embarrassingly parallel.
 </div>
