@@ -9,46 +9,151 @@
 - title: Education
   type: time_table
   contents:
-    - title: Industrial PhD (Coupling of Modern Computational Techniques to Study the Oxygen Reduction Reaction)
+    - title: PhD in Computational Chemistry (Coupling of Modern Computational Techniques to Study the Oxygen Reduction Reaction)
       institution: University of Southampton, Southampton, UK
-      year: 2020 - 2024
+      year: 2020 - 2025
       description:
-        - Computational chemistry and materials science PhD focusing on studying the Oxygen Reduction Reaction on platinum catalysts.
-        - Collaborating with Johnson Matthey, a global leader in sustainable technologies.
-    - title: MSc
-      institution: Lille University, Lille, France / Jagiellonian University, Kraków, Poland
+        - Computational chemistry and materials science PhD focusing on studying the Oxygen Reduction Reaction on platinum catalysts
+        - Collaborating with Johnson Matthey, a global leader in sustainable technologies
+    
+    - title: Master in Theoretical Chemistry
+      institution: University of Lille, Lille, France / Jagiellonian University, Kraków, Poland
       year: 2018 - 2020
       description:
-        - First year, "Molecular Dynamics and Chemical Reactivity" at Lille University, France.
-        - Second year, "Advanced Spectroscopy in Chemistry" International Master's program
-          via the Erasmus Mundus program at Jagiellonian University, Poland.
-        - title: Master's thesis
-          contents:
-            - "Development of a Basin-Hopping Algorithm to Study the Adsorption of Molecules on Semi-Conductors"
-    - title: BSc
-      institution: Lille University, Lille, France
+        - First year, "Molecular Dynamics and Chemical Reactivity" at University of Lille, France
+        - Second year, "Advanced Spectroscopy in Chemistry" (ASC) via the Erasmus+ program at Jagiellonian University, Poland
+    
+    - title: Bachelor in Physics and Chemistry
+      institution: University of Lille, Lille, France
       year: 2014 - 2018
+
+- title: Research Experience
+  type: time_table
+  contents:
+    - title: Doctoral Research
+      institution: University of Southampton, School of Chemistry
+      year: 2020 - 2024
       description:
-        - Bachelor's degree in Physics and Chemistry
-        - title: Bachelor's project
-          contents:
-            - "Using Fluorescence Spectroscopy to Study Degradation of Pollens in the Atmosphere"
+        - Developed a Grand-Canonical Monte Carlo code to predict catalyst oxidation
+        - Bridged the gap between thermodynamic and kinetic aspects of the Oxygen Reduction Reaction overpotential using ML models with fundamental chemistry principles
+        - Conceptualized research projects comparing state-of-the-art solvation models by computing electrode capacitances, workfunctions, and solvation energies at metal-electrolyte interfaces
+        - Partnered with Johnson Matthey for experimental validation of computational predictions
+        - Created a framework using combinatorial optimization to identify stable crystal structures for solid electrolytes
+    
+    - title: Graduate Research
+      institution: Jagiellonian University, Faculty of Chemistry
+      year: 2019 - 2020
+      description:
+        - Developed framework to generate physically motivated initial configurations for solvent molecules in computational simulations
+        - Applied semi-empirical computational methods to predict water dissociation on TiO2 Rutile low-index surfaces
+        - Computed binding energies and workfunction changes upon adsorption of croconic acid on semi-conductor surfaces
+
+- title: Honors, Awards & Fellowships
+  type: time_table
+  contents:
+    - title: Johnson Matthey Industrial PhD Fellowship
+      institution: University of Southampton
+      year: 2020 - 2024
+    - title: International Mobility Grant
+      institution: French Department of Education
+      year: 2019 - 2020
+    - title: Erasmus+ Scholarship for International ASC Master
+      institution: Lille University
+      year: 2019
+    - title: Erasmus Fellowship for Research Internship
+      institution: Jagiellonian University
+      year: 2019
+    - title: Merit Scholarship (Bourse de Mérite)
+      institution: French Department of Education
+      year: 2014 - 2017
+
+- title: Open-source Contributions
+  type: time_table
+  contents:
+    - title: Quansino (Author) - github.com/quansino
+      year: Ongoing
+      description:
+        - Created modular Monte Carlo Python code for sampling atomic configurations built upon ASE
+        - Developed following best coding practices with thorough unit-testing and comprehensive documentation
+    
+    - title: Atomic Simulation Environment (Developer) - gitlab.com/ase
+      year: Ongoing
+      description:
+        - Contributed bugfixes and new functionalities such as molecular dynamics thermostats and I/O interfaces
+        - Familiar with the inner workings of this core computational chemistry library
+    
+    - title: Quantum Accelerator (Contributor) - github.com/quacc
+      year: Ongoing
+      description:
+        - Implemented multiple recipes for DFT codes and increased compatibility with workflow engines (e.g., Parsl)
+        - Proficient with workflow engines enabling rapid deployment of large-scale concurrent workflows
+
+- title: Conferences
+  type: time_table
+  contents:
+    - title: Oxidation of Realistic Platinum Nanoparticles
+      year: Apr 2024
+      description:
+        - Video recording presented at JMAC, Warwick, UK
+    
+    - title: Unraveling the Oxidation of Realistic Platinum Nanoparticles using Linear Scaling DFT and Modern Forcefields
+      year: Mar 2024
+      description:
+        - Poster presented at CCP9, Chester, UK
+    
+    - title: Degradation of platinum nanoparticles by oxidation using coupled computational methods
+      year: Apr 2023
+      description:
+        - Poster presented at JMAC, Warwick, UK
+    
+    - title: Coupling of computational methods to study platinum based electrocatalysts under realistic conditions
+      year: Aug 2022
+      description:
+        - Poster presented at Psi-k Conference, Lausanne, Switzerland
+    
+    - title: DFT simulations comparing Oxygen Reduction Reaction mechanism on Platinum 111 surface and nanoparticles
+      year: Mar 2022
+      description:
+        - Short oral presentation & Poster at JMAC, Warwick, UK
+    
+    - title: DFT simulations comparing Oxygen Reduction Reaction mechanism on Platinum 111 surface and nanoparticles
+      year: Jan 2022
+      description:
+        - Poster presented at UKCC, Loughborough, UK
+
+- title: Teaching & Mentoring
+  type: time_table
+  contents:
+    - title: ONETEP Masterclass
+      year: July 2024
+      description:
+        - Provided intensive one-on-one mentoring to graduate students implementing ONETEP DFT code
+        - Designed and delivered a comprehensive course on scientific Python programming and ASE-ONETEP interface
+    
+    - title: CHEM2034&#58; Digital Chemistry
+      institution: University of Southampton
+      year: Jan - June 2022
+      description:
+        - Collaborated on developing educational Jupyter Notebook implementing numerical solutions to the Schrödinger equation
+        - Provided one-on-one mentoring during workshops
+    
+    - title: CHEM2025&#58; Introduction to Programming
+      institution: University of Southampton
+      year: Sept - Dec 2021
+      description:
+        - Mentored students during practical Python workshops
 
 - title: Skills
   type: list
   contents:
-    - "<b>Programming:</b> Proficient in Python, Julia, Bash. Familiar with Java, C, and Fortran."
-    - "<b>Software:</b> VASP, Quantum Espresso, ONETEP, LAMMPS, ASE, QuAcc, Parsl, Dask, Covalent, Git, Inkscape, Illustrator, Visual Studio Code."
-    - "<b>Techniques:</b> (Linear-Scaling) DFT, MD, MC, Machine Learning, Data Analysis, Workflow Engines."
+    - "<b>Programming Languages:</b> Python, Julia, Fortran, Bash"
+    - "<b>Libraries:</b> ASE, pymatgen, NumPy, SciPy, PyTorch, pandas, Matplotlib, scikit-learn, pytest, quacc"
+    - "<b>Software:</b> Quantum Espresso, VASP, ONETEP, LAMMPS, JDFTx"
+    - "<b>Techniques:</b> Core AI/ML techniques, Sampling techniques (MD, MC), DFT, Kinetic Modeling, Electrochemistry, Github Actions, HPCs"
 
-- title: Side Projects
-  type: time_table
+- title: Additional Achievements
+  type: list
   contents:
-    - title: (Contributor) Atomic Simulation Environment (ASE)
-      year: 2022 - now
-      description:
-        - Implemented MD-specific codes (Bussi thermostat), developed calculators for DFT codes, and contributed to the core library.
-    - title: (Contributor) Quantum Accelerator (QuAcc)
-      year: 2023 - now
-      description:
-        - Worked on implementing concurrent workflows using workflow engines (Dask, Fireworks, Parsl, ...) and contributed to the core library.
+    - "Delivered presentations across multiple research groups, promoting research reproducibility through Jupyter Notebooks and best practices in scientific computing"
+    - "Helped over 1M students with Mathematics and Physical Chemistry on Socratic, a science Q&A platform"
+    - "Achieved five-star ranking in HackerRank problem-solving track with 200+ solved challenges"
