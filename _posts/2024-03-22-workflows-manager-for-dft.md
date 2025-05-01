@@ -8,7 +8,7 @@ featured: true
 related_posts: false
 ---
 
-A few weeks ago I posted my [first blog post](https://tomdemeyere.github.io/blog/2024/quacc-espresso/) where I explained how to use the [Quantum Accelerator (Quacc)](https://github.com/Quantum-Accelerators/quacc/) package to run DFT calculations with Quantum Espresso. Quacc allows you to link your favorite DFT code to a workflow manager, in this blog post I will show you how to run Quantum Espresso calculations using Quacc and the Parsl workflow engine to create comp-chem workflows. The main point being to run multiple calculations concurrently on your local machine or on a high-performance computing cluster.
+A few weeks ago I posted my [first blog post](https://tomdemeyere.github.io/blog/2024/quacc-espresso/) where I explained how to use the [Quantum Accelerator (Quacc)](https://github.com/Quantum-Accelerators/quacc/) package to run DFT calculations with Quantum Espresso. Quacc allows you to link your favorite DFT code to a workflow manager, in this blog post I will show you how to run Quantum Espresso calculations using Quacc and the Parsl workflow engine to create computational chemistry workflows. The main point being to run multiple calculations concurrently on your local machine or on a high-performance computing cluster.
 
 ### Quacc & Parsl tutorial
 
@@ -51,8 +51,8 @@ def grid_phonon_dos_subflow(atoms_list):
 ```
 
 - `grid_phonon_flow` is a pre-made `@flow` in Quacc, that contains multiple `@job`, details can be found in the documentation.
-- `q2r_job` is a pre-made `@job` that runs the `q2r.x`.
-- `matdyn_job` is a pre-made `@job` that runs the `matdyn.x`.
+- `q2r_job` is a pre-made `@job` that runs the `q2r.x` binary.
+- `matdyn_job` is a pre-made `@job` that runs the `matdyn.x` binary.
 
 The aim is then simple, we take a list of ASE `Atoms` objects, and we run this custom workflow for each of them. Each results are then stored in a list and returned. Now that we have to core of the workflow we have to configure Parsl.
 
@@ -221,7 +221,7 @@ At this stage, running the Python script doesn't produce any output. This is bec
 results = future.result()
 ```
 
-If you have important disparities between the size of your jobs, Parsl allows you to define multiple executors. To do this, you just need to add a new executor to the `CONFIG` object. You simply need to add one more executor to the list. I will not show it here, but the code is available on my [GitHub](https://github.com/tomdemeyere/tomdemeyere.github.io/blob/master/code_snippets/blog-post-2.py). Using Quacc each job can be linked to a single executor to make sure to run your jobs using the resources you want.
+If you have important disparities between the size of your jobs, Parsl allows you to define multiple executors. To do this, you just need to add a new executor to the `CONFIG` object. I will not show it here, but an example is available on my [GitHub](https://github.com/tomdemeyere/tomdemeyere.github.io/blob/master/code_snippets/blog-post-2.py). Using Quacc each job can be linked to a single executor to make sure to run your jobs using the resources you want.
 
 ``` python
 q2r_job_custom = redecorate(q2r_job, job(executors=["q2r"]))
