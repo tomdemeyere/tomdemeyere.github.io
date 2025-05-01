@@ -87,7 +87,7 @@ Let's look at the other parameters, the `parallel_info` parameter is used to def
 ---
 ##### **How do I run anything else?**
 
-I implemented various recipes in Quacc for Espresso, you can find them in the [documentation](https://quantum-accelerators.github.io/quacc/user/recipes/recipes_list.html#quantum-espresso). Since I recently extended the ASE Espresso interface to other binaries, it is now possible to use other binaries such as ph.x, pp.x, dos.x, etc...
+I implemented various recipes in Quacc for Espresso, you can find them in the [code documentation](https://quantum-accelerators.github.io/quacc/reference/quacc/recipes/espresso/core.html#quacc.recipes.espresso.core.post_processing_job). Since I recently extended the ASE Espresso interface to other binaries, it is now possible to use other binaries such as ph.x, pp.x, dos.x, etc...
 
 ```python
 from quacc.recipes.espresso.core import ase_relax_job
